@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="sayi1" placeholder="1.sayıyı giriniz">
+    İşlem Seçiniz: <select id="islemler">
+        <option value="seciniz" disabled selected>Seçim Yapınız</option>
+        <option value="topla">Toplama</option>
+        <option value="cikar">Çıkarma</option>
+        <option value="carp">Çarpma</option>
+        <option value="bol">Bölme</option>
+    </select>
+    <input type="number" id="sayi2" placeholder="2.sayıyı giriniz">
+    <button id="buton">HESAPLA</button>
+    <script type="text/javascript">
+        var sonuc;
+        var HesaplaButon=document.getElementById("buton");
+        HesaplaButon.onclick=function(){
+            var secim=document.getElementById("islemler").value;
+            var s1=Number(document.getElementById("sayi1").value);
+            var s2=Number(document.getElementById("sayi2").value);
+            if(secim=="topla"){
+                sonuc=s1+s2;
+            }else if(secim=="cikar"){
+                sonuc=s1-s2;
+            }else if(secim=="carp"){
+                sonuc=s1*s2;
+            }else if(secim=="bol"){
+                sonuc=s1/s2;
+            }else{
+                alert("Seçim Yapınız");
+            }
+        document.write("Sonuç:"+sonuc); 
+        }
+        
+
+    </script>
+</body>
+</html>
